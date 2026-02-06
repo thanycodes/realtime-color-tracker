@@ -44,8 +44,8 @@ color-detection/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/thanycodes/realtime-colour-tracker.git
+cd realtime-colour-tracker
 ```
 
 ### 2️⃣ (Optional) Create a virtual environment

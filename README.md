@@ -32,10 +32,10 @@ HSV (Hue, Saturation, Value) is better for color detection because:
 
 ## 📂 Project Structure
 color-detection/
-├── main.py          # Main script (video capture & detection)
-├── util.py          # Helper function to get HSV limits
-├── requirements.txt # Python dependencies
-└── README.md        # Documentation
+main.py          # Main script (video capture & detection)
+util.py          # Helper function to get HSV limits
+requirements.txt # Python dependencies
+README.md        # Documentation
 
 
 ## ⚙️ Installation

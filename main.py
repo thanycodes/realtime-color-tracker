@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 from util import get_limits
-from PIL import Image
 
 green = [0, 255, 0]  # The BGR colour space for Green
 cap = cv2.VideoCapture(0)
@@ -15,12 +14,11 @@ while True:
     lowerLimit, upperLimit = get_limits(green)
     mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
 
-    mask_ = Image.fromarray(mask)
-
-    bbox = mask_.getbbox()
-
-    if bbox is not None:
-        x1, y1, x2, y2 = bbox
+    # Find bounding box of all non-zero pixels in the mask using OpenCV
+    coords = cv2.findNonZero(mask)
+    if coords is not None:
+        x, y, w, h = cv2.boundingRect(coords)
+        x1, y1, x2, y2 = x, y, x + w, y + h
 
         frame = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 5)
 
